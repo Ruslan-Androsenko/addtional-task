@@ -45,4 +45,30 @@ class IpAddress extends DataBase
             }
         }
     }
+
+    public function save()
+    {
+        $query = "insert into " . self::$tableName . " values (null, '{$this->name}')";
+        $this->db->query($query);
+        $this->id = $this->db->insert_id;
+    }
+
+    public function load($name)
+    {
+        $query = "select * from " . self::$tableName . " where name = '{$name}'";
+        $res = $this->db->query($query);
+
+        if ($row = $res->fetch_assoc()) {
+            $this->setAttributes($row);
+        }
+    }
+
+    public function isValidate()
+    {
+        $patternFragment = '((25[0-5])|(2[0-4]\d)|(1\d{2})|(\d{1,2}))';
+        $patternIp = "/($patternFragment\.){3}$patternFragment/";
+        preg_match($patternIp, $this->name, $matches);
+
+        return strcmp($this->name, $matches[0]) == 0;
+    }
 }

@@ -40,30 +40,60 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    color: #fff;
 }
 
 .table-content .active button {
-    color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
 .table-content .active button:hover,
 .table-content .active button:focus {
-    color: #fff;
     background-color: #449d44;
     border-color: #398439;
 }
 
 .table-content .no-active button {
-    color: #fff;
     background-color: #d9534f;
     border-color: #d43f3a;
 }
 
 .table-content .no-active button:hover,
 .table-content .no-active button:focus {
-    color: #fff;
     background-color: #ac2925;
     border-color: #761c19;
+}
+
+.form-content #form_generate {
+    display: inline-flex;
+}
+
+.form-content .input-form {
+    margin-right: 20px;
+}
+
+.form-content input {
+    padding: 7px 15px;
+    font-size: 14px;
+}
+
+.form-content button {
+    padding: 7px 20px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    border-radius: 5px;
+}
+
+.form-content button:hover,
+.form-content button:hover {
+    background-color: #204d74;
+    border-color: #122b40;
+}
+
+.response-message {
+    display: none;
+    margin: 20px 135px 0 0;
 }
